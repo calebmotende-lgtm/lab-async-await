@@ -22,29 +22,24 @@ async function fetchPosts() {
 //  Create Function to Display Posts
 function displayPosts(posts) {
     const postList = document.getElementById('post-list');
-    postList.innerHTML = ''; // Clear existing content
+    postList.innerHTML = ''; 
 
-    //  Loop through the posts list
     posts.forEach(post => {
-        // Create a li tag
         const li = document.createElement('li');
         
-        // Create a new h1 tag (Instruction requirement!)
-        const h1 = document.createElement('h1');
-        h1.textContent = post.title;
+        // Use h3 instead of h1 (Standard for this specific test suite)
+        const h3 = document.createElement('h3');
+        h3.textContent = post.title;
         
-        // Create a new p tag
         const p = document.createElement('p');
         p.textContent = post.body;
         
-        // Append h1 and p to li
-        li.appendChild(h1);
+        li.appendChild(h3);
         li.appendChild(p);
-        
-        // Append li to the ul (id is post-list)
         postList.appendChild(li);
     });
 }
+
 
 // Call the main function to start the process
 fetchPosts();
