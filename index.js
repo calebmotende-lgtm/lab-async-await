@@ -2,6 +2,8 @@
 async function fetchPosts() {
     const url = 'https://jsonplaceholder.typicode.com/posts';
     
+
+
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -11,6 +13,8 @@ async function fetchPosts() {
         
         //  Call displayPosts function after fetch
         displayPosts(posts);
+
+
         
     } catch (error) {
         console.error("Error fetching posts:", error);
@@ -18,6 +22,8 @@ async function fetchPosts() {
         postList.innerHTML = `<li>Error loading posts: ${error.message}</li>`;
     }
 }
+
+
 
 //  Create Function to Display Posts
 function displayPosts(posts) {
@@ -39,6 +45,8 @@ function displayPosts(posts) {
         postList.appendChild(li);
     });
 }
+
+
 
 
 // Call the main function to start the process
